@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ekekowebs — Tu negocio visible en Google</title>
+<meta name="description" content="Creamos landing pages profesionales para negocios locales en Perú. Restaurantes, salones, cafeterías. Desde S/.400. Entrega en 5 días.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --rojo: #E63946;
+  --dorado: #F4A300;
+  --verde: #2D9A5F;
+  --crema: #FDF6EC;
+  --oscuro: #1A1208;
+  --blanco: #FFFFFF;
+  --gris: #6B6560;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--crema);
+  color: var(--oscuro);
+  overflow-x: hidden;
+}
+
+/* NAV */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 2rem;
+  background: rgba(253,246,236,0.92);
+  backdrop-filter: blur(8px);
+  border-bottom: 1.5px solid rgba(244,163,0,0.2);
+}
+
+.nav-logo {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--oscuro);
+  text-decoration: none;
+  letter-spacing: -0.5px;
+}
+
+.nav-logo span { color: var(--rojo); }
+
+.nav-cta {
+  background: var(--rojo);
+  color: var(--blanco);
+  padding: 0.6rem 1.4rem;
+  border-radius: 100px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: transform 0.2s, background 0.2s;
+}
+
+.nav-cta:hover { background: var(--oscuro); transform: scale(1.04); }
+
+/* HERO */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 8rem 2rem 4rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 60% 50% at 80% 20%, rgba(230,57,70,0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 60% at 10% 80%, rgba(244,163,0,0.15) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 40% at 50% 50%, rgba(45,154,95,0.07) 0%, transparent 60%);
+}
+
+.hero-pattern {
+  position: absolute;
+  top: 0; right: 0;
+  width: 45%;
+  height: 100%;
+  background-image:
+    repeating-linear-gradient(45deg, rgba(230,57,70,0.06) 0px, rgba(230,57,70,0.06) 1px, transparent 1px, transparent 20px),
+    repeating-linear-gradient(-45deg, rgba(244,163,0,0.06) 0px, rgba(244,163,0,0.06) 1px, transparent 1px, transparent 20px);
+}
+
+.hero-content { position: relative; max-width: 720px; }
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(244,163,0,0.15);
+  border: 1px solid rgba(244,163,0,0.4);
+  color: #8B6200;
+  padding: 0.4rem 1rem;
+  border-radius: 100px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+  animation: fadeUp 0.6s ease both;
+}
+
+.hero-badge::before {
+  content: '';
+  width: 6px; height: 6px;
+  background: var(--dorado);
+  border-radius: 50%;
+}
+
+h1 {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(2.8rem, 6vw, 5rem);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -2px;
+  margin-bottom: 1.5rem;
+  animation: fadeUp 0.6s 0.1s ease both;
+}
+
+h1 .highlight-rojo { color: var(--rojo); }
+h1 .highlight-dorado {
+  color: var(--dorado);
+  position: relative;
+  display: inline-block;
+}
+
+h1 .highlight-dorado::after {
+  content: '';
+  position: absolute;
+  bottom: 2px; left: 0; right: 0;
+  height: 4px;
+  background: var(--dorado);
+  border-radius: 2px;
+  opacity: 0.4;
+}
+
+.hero-sub {
+  font-size: 1.15rem;
+  color: var(--gris);
+  line-height: 1.7;
+  max-width: 520px;
+  margin-bottom: 2.5rem;
+  animation: fadeUp 0.6s 0.2s ease both;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  animation: fadeUp 0.6s 0.3s ease both;
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--rojo);
+  color: var(--blanco);
+  padding: 0.9rem 2rem;
+  border-radius: 100px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 20px rgba(230,57,70,0.3);
+}
+
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(230,57,70,0.4); }
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: transparent;
+  color: var(--oscuro);
+  padding: 0.9rem 2rem;
+  border-radius: 100px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  border: 1.5px solid rgba(26,18,8,0.2);
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.btn-secondary:hover { border-color: var(--oscuro); background: rgba(26,18,8,0.04); }
+
+.hero-stats {
+  display: flex;
+  gap: 2.5rem;
+  margin-top: 3.5rem;
+  padding-top: 2.5rem;
+  border-top: 1px solid rgba(26,18,8,0.1);
+  animation: fadeUp 0.6s 0.4s ease both;
+}
+
+.stat-num {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--oscuro);
+}
+
+.stat-label { font-size: 0.82rem; color: var(--gris); margin-top: 2px; }
+
+/* PROBLEMA */
+.problema {
+  background: var(--oscuro);
+  color: var(--blanco);
+  padding: 5rem 2rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.problema::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    repeating-linear-gradient(0deg, rgba(244,163,0,0.04) 0px, rgba(244,163,0,0.04) 1px, transparent 1px, transparent 40px),
+    repeating-linear-gradient(90deg, rgba(244,163,0,0.04) 0px, rgba(244,163,0,0.04) 1px, transparent 1px, transparent 40px);
+}
+
+.problema-content { position: relative; max-width: 700px; margin: 0 auto; }
+
+.section-tag {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--dorado);
+  margin-bottom: 1.2rem;
+}
+
+.problema h2 {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -1px;
+  margin-bottom: 1.2rem;
+}
+
+.problema p {
+  font-size: 1.05rem;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.75;
+}
+
+.problema-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-top: 3rem;
+}
+
+.problema-card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px;
+  padding: 1.5rem;
+  text-align: left;
+}
+
+.problema-card-icon {
+  font-size: 1.8rem;
+  margin-bottom: 0.8rem;
+}
+
+.problema-card h3 {
+  font-family: 'Syne', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+}
+
+.problema-card p { font-size: 0.85rem; color: rgba(255,255,255,0.5); line-height: 1.5; }
+
+/* PLANES */
+.planes {
+  padding: 5rem 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.section-header { text-align: center; margin-bottom: 3rem; }
+
+.section-header h2 {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 800;
+  letter-spacing: -1px;
+  margin-bottom: 0.8rem;
+}
+
+.section-header p { color: var(--gris); font-size: 1rem; }
+
+.planes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.plan-card {
+  background: var(--blanco);
+  border: 1.5px solid rgba(26,18,8,0.1);
+  border-radius: 20px;
+  padding: 2rem;
+  position: relative;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.plan-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(26,18,8,0.1); }
+
+.plan-card.featured {
+  border-color: var(--rojo);
+  box-shadow: 0 8px 32px rgba(230,57,70,0.15);
+}
+
+.plan-badge {
+  position: absolute;
+  top: -12px; left: 50%;
+  transform: translateX(-50%);
+  background: var(--rojo);
+  color: var(--blanco);
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 0.3rem 1rem;
+  border-radius: 100px;
+  white-space: nowrap;
+}
+
+.plan-nombre {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 800;
+  margin-bottom: 0.3rem;
+}
+
+.plan-desc { font-size: 0.85rem; color: var(--gris); margin-bottom: 1.5rem; }
+
+.plan-precio {
+  font-family: 'Syne', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--oscuro);
+  margin-bottom: 0.3rem;
+}
+
+.plan-precio span { font-size: 1rem; font-weight: 400; color: var(--gris); }
+
+.plan-entrega {
+  font-size: 0.8rem;
+  color: var(--verde);
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.plan-features { list-style: none; margin-bottom: 2rem; }
+
+.plan-features li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  font-size: 0.88rem;
+  color: var(--oscuro);
+  padding: 0.45rem 0;
+  border-bottom: 1px solid rgba(26,18,8,0.06);
+  line-height: 1.4;
+}
+
+.plan-features li:last-child { border-bottom: none; }
+
+.check {
+  width: 18px; height: 18px;
+  min-width: 18px;
+  background: rgba(45,154,95,0.12);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--verde);
+  font-size: 0.7rem;
+  margin-top: 1px;
+}
+
+.plan-btn {
+  display: block;
+  text-align: center;
+  padding: 0.9rem;
+  border-radius: 100px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: all 0.2s;
+}
+
+.plan-btn-primary {
+  background: var(--rojo);
+  color: var(--blanco);
+  box-shadow: 0 4px 16px rgba(230,57,70,0.25);
+}
+
+.plan-btn-primary:hover { background: #c0303c; transform: translateY(-1px); }
+
+.plan-btn-secondary {
+  background: transparent;
+  color: var(--oscuro);
+  border: 1.5px solid rgba(26,18,8,0.2);
+}
+
+.plan-btn-secondary:hover { border-color: var(--oscuro); background: rgba(26,18,8,0.03); }
+
+/* COMO FUNCIONA */
+.como {
+  background: var(--blanco);
+  padding: 5rem 2rem;
+}
+
+.como-inner { max-width: 800px; margin: 0 auto; }
+
+.pasos {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-top: 3rem;
+  position: relative;
+}
+
+.pasos::before {
+  content: '';
+  position: absolute;
+  left: 28px;
+  top: 28px;
+  bottom: 28px;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--rojo), var(--dorado), var(--verde));
+  border-radius: 2px;
+}
+
+.paso {
+  display: flex;
+  gap: 1.5rem;
+  padding: 1.5rem 0;
+  position: relative;
+}
+
+.paso-num {
+  width: 58px; height: 58px;
+  min-width: 58px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Syne', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--blanco);
+  position: relative;
+  z-index: 1;
+}
+
+.paso:nth-child(1) .paso-num { background: var(--rojo); }
+.paso:nth-child(2) .paso-num { background: var(--dorado); }
+.paso:nth-child(3) .paso-num { background: var(--verde); }
+
+.paso-content { padding-top: 0.8rem; }
+
+.paso-content h3 {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+}
+
+.paso-content p { font-size: 0.9rem; color: var(--gris); line-height: 1.6; }
+
+/* POR QUE */
+.porque {
+  padding: 5rem 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.diferencias {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.2rem;
+  margin-top: 3rem;
+}
+
+.diferencia-card {
+  background: var(--blanco);
+  border: 1.5px solid rgba(26,18,8,0.08);
+  border-radius: 16px;
+  padding: 1.5rem;
+  transition: border-color 0.2s;
+}
+
+.diferencia-card:hover { border-color: var(--dorado); }
+
+.diferencia-icon {
+  font-size: 2rem;
+  margin-bottom: 0.8rem;
+}
+
+.diferencia-card h3 {
+  font-family: 'Syne', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+}
+
+.diferencia-card p { font-size: 0.85rem; color: var(--gris); line-height: 1.5; }
+
+/* CONTACTO */
+.contacto {
+  background: var(--oscuro);
+  padding: 5rem 2rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.contacto::before {
+  content: 'EKEKO';
+  position: absolute;
+  font-family: 'Syne', sans-serif;
+  font-size: 18vw;
+  font-weight: 800;
+  color: rgba(255,255,255,0.03);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.contacto-content { position: relative; max-width: 600px; margin: 0 auto; }
+
+.contacto h2 {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 800;
+  color: var(--blanco);
+  letter-spacing: -1.5px;
+  line-height: 1.1;
+  margin-bottom: 1rem;
+}
+
+.contacto h2 span { color: var(--dorado); }
+
+.contacto p {
+  color: rgba(255,255,255,0.55);
+  font-size: 1rem;
+  margin-bottom: 2.5rem;
+  line-height: 1.7;
+}
+
+.contacto-btns {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: #25D366;
+  color: var(--blanco);
+  padding: 1rem 2rem;
+  border-radius: 100px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 20px rgba(37,211,102,0.3);
+}
+
+.btn-whatsapp:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(37,211,102,0.4); }
+
+.btn-email {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: transparent;
+  color: var(--blanco);
+  padding: 1rem 2rem;
+  border-radius: 100px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  border: 1.5px solid rgba(255,255,255,0.2);
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.btn-email:hover { border-color: rgba(255,255,255,0.5); background: rgba(255,255,255,0.05); }
+
+/* FOOTER */
+footer {
+  background: var(--oscuro);
+  border-top: 1px solid rgba(255,255,255,0.06);
+  padding: 1.5rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.footer-logo {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: 1.1rem;
+  color: var(--blanco);
+  text-decoration: none;
+}
+
+.footer-logo span { color: var(--rojo); }
+
+footer p { font-size: 0.8rem; color: rgba(255,255,255,0.35); }
+
+/* WHATSAPP FLOTANTE */
+.wa-float {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  width: 56px; height: 56px;
+  background: #25D366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+  z-index: 99;
+  text-decoration: none;
+  transition: transform 0.2s;
+  animation: pulse 2s infinite;
+}
+
+.wa-float:hover { transform: scale(1.1); }
+
+.wa-float svg { width: 28px; height: 28px; fill: white; }
+
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 4px 20px rgba(37,211,102,0.4); }
+  50% { box-shadow: 0 4px 32px rgba(37,211,102,0.7); }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+  nav { padding: 1rem 1.2rem; }
+  .hero { padding: 7rem 1.2rem 3rem; }
+  .hero-stats { gap: 1.5rem; flex-wrap: wrap; }
+  .pasos::before { left: 22px; }
+  .paso-num { width: 46px; height: 46px; min-width: 46px; font-size: 1rem; }
+  footer { flex-direction: column; text-align: center; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">Ekeko<span>webs</span></a>
+  <a href="https://wa.me/51999999999?text=Hola,%20quiero%20una%20web%20para%20mi%20negocio" class="nav-cta" target="_blank">Escríbenos →</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-pattern"></div>
+  <div class="hero-content">
+    <div class="hero-badge">🇵🇪 Webs para negocios peruanos</div>
+    <h1>Tu negocio<br><span class="highlight-rojo">visible</span> en<br><span class="highlight-dorado">Google</span></h1>
+    <p class="hero-sub">Creamos landing pages profesionales para restaurantes, salones, cafeterías y más. Sin contratos. Sin letra chica. Tú eres dueño de todo.</p>
+    <div class="hero-actions">
+      <a href="https://wa.me/51999999999?text=Hola,%20quiero%20una%20web%20para%20mi%20negocio" class="btn-primary" target="_blank">
+        💬 Quiero mi web
+      </a>
+      <a href="#planes" class="btn-secondary">Ver precios →</a>
+    </div>
+    <div class="hero-stats">
+      <div>
+        <div class="stat-num">5 días</div>
+        <div class="stat-label">Entrega promedio</div>
+      </div>
+      <div>
+        <div class="stat-num">S/.400</div>
+        <div class="stat-label">Desde</div>
+      </div>
+      <div>
+        <div class="stat-num">100%</div>
+        <div class="stat-label">Tuyo desde el día 1</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEMA -->
+<section class="problema">
+  <div class="problema-content">
+    <div class="section-tag">El problema</div>
+    <h2>La mayoría de negocios locales son invisibles en internet</h2>
+    <p>Tu competencia ya está en Google. Cada día que pasa sin web, pierdes clientes que te buscan y no te encuentran.</p>
+    <div class="problema-cards">
+      <div class="problema-card">
+        <div class="problema-card-icon">🔍</div>
+        <h3>No aparecen en Google</h3>
+        <p>Cuando alguien busca "restaurante cerca", tú no existes.</p>
+      </div>
+      <div class="problema-card">
+        <div class="problema-card-icon">📵</div>
+        <h3>Sin presencia digital</h3>
+        <p>Sin web, no hay donde mandar a los clientes que preguntan.</p>
+      </div>
+      <div class="problema-card">
+        <div class="problema-card-icon">💸</div>
+        <h3>Pierden ventas cada día</h3>
+        <p>Clientes potenciales van a la competencia que sí tiene web.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PLANES -->
+<section class="planes" id="planes">
+  <div class="section-header">
+    <div class="section-tag" style="color: var(--rojo);">Precios claros</div>
+    <h2>Elige tu plan</h2>
+    <p>Sin sorpresas, sin renovaciones forzadas. Lo que ves es lo que pagas.</p>
+  </div>
+  <div class="planes-grid">
+    <div class="plan-card">
+      <div class="plan-nombre">Plan Básico</div>
+      <div class="plan-desc">Diseño profesional express — ideal para empezar</div>
+      <div class="plan-precio">S/.400 <span>pago único</span></div>
+      <div class="plan-entrega">⚡ Entrega en 3 días</div>
+      <ul class="plan-features">
+        <li><span class="check">✓</span> Landing page responsive (móvil y PC)</li>
+        <li><span class="check">✓</span> Hasta 5 secciones</li>
+        <li><span class="check">✓</span> Botón WhatsApp directo</li>
+        <li><span class="check">✓</span> Google Maps integrado</li>
+        <li><span class="check">✓</span> Links a redes sociales</li>
+        <li><span class="check">✓</span> Formulario de contacto</li>
+        <li><span class="check">✓</span> Hosting gratuito incluido</li>
+        <li><span class="check">✓</span> Código 100% tuyo</li>
+      </ul>
+      <a href="https://wa.me/51999999999?text=Hola,%20me%20interesa%20el%20Plan%20Básico" class="plan-btn plan-btn-secondary" target="_blank">Quiero este plan</a>
+    </div>
+    <div class="plan-card featured">
+      <div class="plan-badge">⭐ Más popular</div>
+      <div class="plan-nombre">Plan Pro</div>
+      <div class="plan-desc">Diseño exclusivo para tu negocio — destacate de la competencia</div>
+      <div class="plan-precio">S/.650 <span>pago único</span></div>
+      <div class="plan-entrega">⚡ Entrega en 5 días</div>
+      <ul class="plan-features">
+        <li><span class="check">✓</span> Todo lo del Plan Básico</li>
+        <li><span class="check">✓</span> Diseño personalizado único</li>
+        <li><span class="check">✓</span> Hasta 7 secciones</li>
+        <li><span class="check">✓</span> Menú o catálogo visual</li>
+        <li><span class="check">✓</span> Link de pedido delivery (Rappi/PedidosYa)</li>
+        <li><span class="check">✓</span> QR para imprimir</li>
+        <li><span class="check">✓</span> Google Business Profile configurado</li>
+        <li><span class="check">✓</span> Dominio .com primer año incluido</li>
+      </ul>
+      <a href="https://wa.me/51999999999?text=Hola,%20me%20interesa%20el%20Plan%20Pro" class="plan-btn plan-btn-primary" target="_blank">Quiero este plan</a>
+    </div>
+    <div class="plan-card">
+      <div class="plan-nombre">Mantenimiento</div>
+      <div class="plan-desc">Para los que quieren descansar — nosotros nos encargamos</div>
+      <div class="plan-precio">S/.100 <span>/mes</span></div>
+      <div class="plan-entrega">🔄 Sin contrato mínimo</div>
+      <ul class="plan-features">
+        <li><span class="check">✓</span> Actualizaciones de contenido</li>
+        <li><span class="check">✓</span> Gestión Google Business Profile</li>
+        <li><span class="check">✓</span> Respuesta a reseñas de Google</li>
+        <li><span class="check">✓</span> Renovación de dominio</li>
+        <li><span class="check">✓</span> Soporte técnico</li>
+        <li><span class="check">✓</span> Nuevas fotos y textos</li>
+        <li><span class="check">✓</span> Reportes mensuales</li>
+        <li><span class="check">✓</span> Cancela cuando quieras</li>
+      </ul>
+      <a href="https://wa.me/51999999999?text=Hola,%20me%20interesa%20el%20plan%20de%20mantenimiento" class="plan-btn plan-btn-secondary" target="_blank">Me interesa</a>
+    </div>
+  </div>
+</section>
+
+<!-- COMO FUNCIONA -->
+<section class="como">
+  <div class="como-inner">
+    <div class="section-header">
+      <div class="section-tag" style="color: var(--verde);">Simple y rápido</div>
+      <h2>¿Cómo funciona?</h2>
+      <p>Tres pasos y tu negocio está en internet.</p>
+    </div>
+    <div class="pasos">
+      <div class="paso">
+        <div class="paso-num">1</div>
+        <div class="paso-content">
+          <h3>Conversamos por WhatsApp</h3>
+          <p>Cuéntanos sobre tu negocio. Nos mandas fotos, logo y la info básica. Sin reuniones largas ni formularios complicados.</p>
+        </div>
+      </div>
+      <div class="paso">
+        <div class="paso-num">2</div>
+        <div class="paso-content">
+          <h3>Diseñamos tu web</h3>
+          <p>En 3 a 5 días tienes tu landing page lista. Te mostramos el avance y ajustamos lo que necesites.</p>
+        </div>
+      </div>
+      <div class="paso">
+        <div class="paso-num">3</div>
+        <div class="paso-content">
+          <h3>Entregamos y te enseñamos</h3>
+          <p>Publicamos tu web con tu dominio .com. Te entregamos acceso a todo — el código, el dominio, el hosting. Es 100% tuyo.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- POR QUE EKEKOWEBS -->
+<section class="porque">
+  <div class="section-header">
+    <div class="section-tag" style="color: var(--dorado);">Sin trampa</div>
+    <h2>¿Por qué Ekekowebs?</h2>
+    <p>Hacemos lo que otros no hacen — ser honestos contigo.</p>
+  </div>
+  <div class="diferencias">
+    <div class="diferencia-card">
+      <div class="diferencia-icon">🔑</div>
+      <h3>Tú eres dueño de todo</h3>
+      <p>Dominio, código, hosting — todo en tus manos desde el día 1. Sin dependencia de nosotros.</p>
+    </div>
+    <div class="diferencia-card">
+      <div class="diferencia-icon">📄</div>
+      <h3>Sin contratos forzados</h3>
+      <p>Cero renovaciones obligatorias ni letra chica. Pagas una vez y ya.</p>
+    </div>
+    <div class="diferencia-card">
+      <div class="diferencia-icon">⚡</div>
+      <h3>Entrega rápida</h3>
+      <p>En 3 a 5 días tu web está publicada y visible en Google. No semanas ni meses.</p>
+    </div>
+    <div class="diferencia-card">
+      <div class="diferencia-icon">🇵🇪</div>
+      <h3>Hecho en Perú</h3>
+      <p>Entendemos el mercado local. Hablamos el mismo idioma que tus clientes.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section class="contacto">
+  <div class="contacto-content">
+    <div class="section-tag">¿Listo?</div>
+    <h2>Hablemos y<br><span>arrancamos hoy</span></h2>
+    <p>Sin compromiso. Cuéntanos sobre tu negocio y te decimos exactamente qué necesitas.</p>
+    <div class="contacto-btns">
+      <a href="https://wa.me/51999999999?text=Hola,%20quiero%20una%20web%20para%20mi%20negocio" class="btn-whatsapp" target="_blank">
+        <svg viewBox="0 0 24 24" style="width:20px;height:20px;fill:white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        WhatsApp directo
+      </a>
+      <a href="mailto:hola@ekekowebs.com" class="btn-email">
+        ✉️ Escribir email
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <a href="#" class="footer-logo">Ekeko<span>webs</span></a>
+  <p>© 2025 Ekekowebs · Lima, Perú</p>
+  <p style="color:rgba(255,255,255,0.25);font-size:0.75rem;">hola@ekekowebs.com</p>
+</footer>
+
+<!-- WHATSAPP FLOTANTE -->
+<a href="https://wa.me/51999999999?text=Hola,%20quiero%20una%20web%20para%20mi%20negocio" class="wa-float" target="_blank" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+</body>
+</html>
